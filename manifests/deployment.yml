@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: "myakscluster-d6d3"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: "myakscluster-d6d3"
+  template:
+    metadata:
+      labels:
+        app: "myakscluster-d6d3"
+    spec:
+      containers:
+        - name: "myakscluster-d6d3"
+          image: "kavishka.azurecr.io/myakscluster"
+          ports:
+          - containerPort: 5000
